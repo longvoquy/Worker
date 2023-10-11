@@ -2,8 +2,8 @@ package method;
 
 import data.Worker;
 
-import static control.Libary.historyList;
-import static control.Libary.workersList;
+import static controller.Library.historyList;
+import static controller.Library.workersList;
 
 public class Basic implements Check<Worker> {
     private static DAO dao = new DAO();

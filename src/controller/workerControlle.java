@@ -1,4 +1,4 @@
-package control;
+package controller;
 
 import data.Worker;
 import method.Basic;
@@ -8,22 +8,22 @@ import view.Menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static control.Libary.historyList;
-import static control.Libary.workersList;
+import static controller.Library.historyList;
+import static controller.Library.workersList;
 
-public class Control extends Menu<String> {
+public class workerControlle extends Menu<String> {
 
 
     private Scanner scanner = new Scanner(System.in);
     private static Basic bs = new Basic();
-    Libary lb = new Libary();
+    Library lb = new Library();
     public ArrayList<String> inputID = new ArrayList<>();
 
 
     //--------------------------------------------------------
     static String[] menu = {"Add Worker", "Up Salary", "Down Salary", "Show Salary", "EXIT (0)"};
 
-    public Control() {
+    public workerControlle() {
         super("\n----------!!Control System!!----------", menu);
 
     }

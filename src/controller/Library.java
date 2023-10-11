@@ -1,4 +1,4 @@
-package control;
+package controller;
 
 import data.History;
 import data.Worker;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-public class Libary {
+public class Library {
     public static ArrayList<Worker> workersList = new ArrayList<>();
     public static ArrayList<History> historyList = new ArrayList<>();
 

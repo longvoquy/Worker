@@ -1,6 +1,6 @@
 package method;
 
-import control.Libary;
+import controller.Library;
 import data.History;
 import data.Worker;
 
@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class DAO {
     private final Scanner scanner = new Scanner(System.in);
 
-    Libary lb = new Libary();
+    Library lb = new Library();
 
     //--------------------------------------------------------
     public boolean increase(Worker w, ArrayList<History> historyList) {
