@@ -11,13 +11,11 @@ import java.util.Scanner;
 
 
 public class DAO {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     Libary lb = new Libary();
-    public static DAO getInstance() {
-        return new DAO();
-    }
 
+    //--------------------------------------------------------
     public boolean increase(Worker w, ArrayList<History> historyList) {
 
         double raiseAmount = lb.getAmount(scanner);
@@ -38,7 +36,7 @@ public class DAO {
         return true;
     }
 
-
+    //--------------------------------------------------------
     public boolean decrease(Worker w, ArrayList<History> historyList) {
 
         double lowerAmount = lb.getAmount(scanner);
@@ -59,6 +57,7 @@ public class DAO {
         return true;
     }
 
+    //--------------------------------------------------------
     public String getCurrentDate() {
         // Create a DateTimeFormatter to specify the desired date format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -67,18 +66,17 @@ public class DAO {
         LocalDate currentDate = LocalDate.now();
 
         // Format the date as a string and return it
-        String formattedDate = currentDate.format(formatter);
 
-        return formattedDate;
+        return currentDate.format(formatter);
     }
 
-    public static Worker getWorkerByCode(ArrayList<Worker> workersList, String id) {
-        for (Worker worker : workersList) {
+    public static Worker getWorkerByCode(ArrayList<Worker> wIDList, String id) {
+        for (Worker worker : wIDList) {
             if (id.equalsIgnoreCase(worker.getiD())) {
                 return worker;
             }
         }
         return null;
     }
-
+//--------------------------------------------------------
 }

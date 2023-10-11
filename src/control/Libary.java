@@ -4,7 +4,6 @@ import data.History;
 import data.Worker;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
@@ -14,18 +13,28 @@ public class Libary {
 
 
     //-------------------------------------------------------------------------------
-    public String getValidWorkerID(Scanner scanner, ArrayList<String> workersList) {
+    public String checkValidWorkerID(Scanner scanner, ArrayList<String> wIDList) {
+        String id;
+        boolean isValid = false;
+        do {
+            id = getInput("Enter Worker ID: ", scanner, s -> !s.isEmpty(), "ID cannot be empty");
+            if (wIDList.contains(id)) {
+                isValid = true;
+            } else {
+                System.err.println("ID does not exist in the worker list or is empty. Please try again.");
+            }
+        } while (!isValid);
+        return id;
+    }
+
+    public String getValidWorkerID(Scanner scanner, ArrayList<String> wIDList) {
         String id;
         do {
             id = getInput("Enter Worker ID: ", scanner, s -> !s.isEmpty(), "ID cannot be empty");
-            if (workersList.contains(id)) {
-                System.err.println("ID already exists. Please enter a different ID.");
-            } else if (id == null) {
-                System.err.println("ID cannot be null.");
-            } else {
-                System.out.println("ID does not exist in the list.");
+            if (wIDList.contains(id) || id == null) {
+                System.err.println("ID cannot be null or duplicated with an existing ID.");
             }
-        } while (workersList.contains(id) || id == null);
+        } while (wIDList.contains(id) || id == null);
         return id;
     }
 
@@ -75,6 +84,7 @@ public class Libary {
         }
     }
 
+    //--------------------------------------------------------
     public String getInput(String prompt, Scanner scanner, Predicate<String> validator, String errorMessage) {
         String input;
         do {
