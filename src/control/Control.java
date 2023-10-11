@@ -52,7 +52,7 @@ public class Control extends Menu<String> {
         Worker worker = DAO.getWorkerByCode(workersList, iD); // Gọi phương thức getWorkerByCode với danh sách công nhân và mã công nhân.
 
         if (worker != null) {
-            check = bs.decrease(worker); // Gọi phương thức increase với công nhân cụ thể và danh sách công nhân.
+            check = bs.decrease(worker); // Gọi phương thức decrease với công nhân cụ thể và danh sách công nhân.
             if (check) {
                 System.out.println("Salary lower successfully.");
             } else {
@@ -69,7 +69,7 @@ public class Control extends Menu<String> {
         Worker worker = DAO.getWorkerByCode(workersList, iD);// Gọi phương thức getWorkerByCode với danh sách công nhân và mã công nhân.
 
         if (worker != null) {
-            check = bs.increase(worker); // Gọi phương thức decrease với công nhân cụ thể và danh sách công nhân.
+            check = bs.increase(worker); // Gọi phương thức increase với công nhân cụ thể và danh sách công nhân.
             if (check) {
                 System.out.println("Salary raised successfully.");
             } else {
