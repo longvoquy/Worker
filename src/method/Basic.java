@@ -25,7 +25,12 @@ public class Basic implements Check<Worker> {
             }
         }
         return true; // ID is unique
+//        boolean check;
+//        Worker w = new Worker(id, name, age, salary, workS);
+//        check = add(w);
+//        return check;
     }
+
 
     @Override
     public boolean add(Worker w) {

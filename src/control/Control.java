@@ -78,11 +78,12 @@ public class Control extends Menu<String> {
     private void addWorker() {
         boolean check;
         String iD = lb.getValidWorkerID(scanner, wList);
-        String name = lb.getInput("Enter Worker Name: ", scanner, s -> !s.isEmpty(), "Name cannot be empty");
+        String name = lb.getInput("Enter  Name: ", scanner, s -> !s.isEmpty(), "Name cannot be empty");
         int age = lb.getValidAge(scanner);
         double salary = lb.getValidSalary(scanner);
-        String date = lb.getInput("Enter Date: ", scanner, s -> s.matches("\\d{2}/\\d{2}/\\d{4}"), "Invalid date format\n dd/mm/yyyy");
-        check = bs.createWorker(iD, name, age, salary, date);
+        String workL = lb.getInput("Enter work location", scanner, s -> !s.isEmpty(), "Name cannot be empty");
+        check = bs.createWorker(iD, name, age, salary, workL);
+
         if (check) {
             System.out.println("Nice");
         } else {

@@ -18,8 +18,12 @@ public class Libary {
         String id;
         do {
             id = getInput("Enter Worker ID: ", scanner, s -> !s.isEmpty(), "ID cannot be empty");
-            if (workersList.contains(id) || id == null) {
-                System.err.println("ID cannot be null or duplicated with an existing ID.");
+            if (workersList.contains(id)) {
+                System.err.println("ID already exists. Please enter a different ID.");
+            } else if (id == null) {
+                System.err.println("ID cannot be null.");
+            } else {
+                System.out.println("ID does not exist in the list.");
             }
         } while (workersList.contains(id) || id == null);
         return id;

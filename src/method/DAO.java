@@ -14,13 +14,11 @@ public class DAO {
     private Scanner scanner = new Scanner(System.in);
 
     Libary lb = new Libary();
+    public static DAO getInstance() {
+        return new DAO();
+    }
 
     public boolean increase(Worker w, ArrayList<History> historyList) {
-
-        if (w == null) {
-            System.err.println("Worker with the provided code does not exist.");
-            return false;
-        }
 
         double raiseAmount = lb.getAmount(scanner);
         if (raiseAmount <= 0) {
@@ -42,11 +40,6 @@ public class DAO {
 
 
     public boolean decrease(Worker w, ArrayList<History> historyList) {
-
-        if (w == null) {
-            System.err.println("Worker with the provided code does not exist.");
-            return false;
-        }
 
         double lowerAmount = lb.getAmount(scanner);
         if (lowerAmount <= 0) {
